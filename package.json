@@ -3,12 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "npm run css-watch | vue-cli-service serve --open",
+    "build": "npm run css-build && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "css-deploy": "npm run css-build && npm run css-postcss",
+    "css-build": "node-sass resources/main.scss resources/dist/main.css",
+    "css-postcss": "postcss --use autoprefixer --output public/css/main.css resources/dist/main.css",
+    "css-watch": "npm run css-build -- --watch",
+    "deploy": "npm run css-deploy"
   },
   "dependencies": {
-    "vue": "^2.5.13"
+    "autoprefixer": "^7.1.5",
+    "axios": "^0.18.0",
+    "bulma": "^0.6.2",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.1",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "web3": "^1.0.0-beta.33"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",
