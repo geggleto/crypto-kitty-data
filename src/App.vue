@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <navigation v-if="profile !== ''"/>
+        <navigation />
+
         <login-component v-if="profile === ''" />
 
         <router-view v-if="profile !== ''"/>

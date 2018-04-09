@@ -8,13 +8,13 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">
+                <a class="navbar-item" v-if="profile !== ''">
                     DNA Dashboard
                 </a>
             </div>
 
             <div class="navbar-end">
-                <!-- navbar items -->
+                <tip></tip>
             </div>
         </div>
     </nav>
@@ -23,11 +23,16 @@
 <script>
     import store from './../store';
 
+    import Tip from './TipComponent';
+
     export default {
         name: 'navigation',
 
         data() {
             return store.state;
+        },
+        components: {
+            Tip
         }
     }
 </script>

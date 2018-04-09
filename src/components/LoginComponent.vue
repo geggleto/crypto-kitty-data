@@ -1,26 +1,27 @@
 <template>
-
-    <div class="columns">
-        <div class="column is-2"></div>
-        <div class="column is-8">
-            <section class="section">
-                <article class="message is-dark">
-                    <div class="message-header"><p>Login</p></div>
-                    <div class="message-body"><!---->
-                        <div>
-                            <div class="field has-addons">
-                                <div class="control">
-                                    <a class="button is-info" v-on:click="login">
-                                        Sign In With Meta-Mask
-                                    </a>
+    <div>
+        <div class="columns">
+            <div class="column is-2"></div>
+            <div class="column is-8">
+                <section class="section">
+                    <article class="message is-dark">
+                        <div class="message-header"><p>Login</p></div>
+                        <div class="message-body"><!---->
+                            <div>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <a class="button is-info" v-on:click="login">
+                                            Sign In With Meta-Mask
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </article>
-            </section>
+                    </article>
+                </section>
+            </div>
+            <div class="column is-2"></div>
         </div>
-        <div class="column is-2"></div>
     </div>
 
 </template>
