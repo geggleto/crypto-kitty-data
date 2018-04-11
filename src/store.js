@@ -19,9 +19,6 @@ let store = {
         )
         .then(response => {
             this.state.kittyDna = response.data;
-
-            console.log(this.state.kittyDna);
-
         });
     },
     loadCKProfile(offset) {
@@ -36,6 +33,23 @@ let store = {
 
                 if (response.data.kitties.length > 0) {
                     setTimeout(this.loadCKProfile(offset + 20), 500);
+                } else {
+                    //Fetch the DNA
+                    this.getKittyDna();
+                }
+            })
+    },
+    loadOtherCKProfile(profile, offset) {
+
+        axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address='+profile+'&limit=20&offset='+offset)
+            .then(response => {
+
+                for (let i in response.data.kitties) {
+                    this.state.profileKitties.push(response.data.kitties[i]);
+                }
+
+                if (response.data.kitties.length > 0) {
+                    setTimeout(this.loadOtherCKProfile(profile, offset + 20), 500);
                 } else {
                     //Fetch the DNA
                     this.getKittyDna();
