@@ -25,21 +25,29 @@ let store = {
     loadOtherCKProfile(profile, offset) {
         this.state.loading = true;
 
-        axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address='+profile+'&limit=20&offset='+offset)
-            .then(response => {
+        if (offset === 600) {
+            this.getKittyDna()
+                .then(() => {this.state.loading = false; });
+        } else {
 
-                for (let i in response.data.kitties) {
-                    this.state.profileKitties.push(response.data.kitties[i]);
-                }
+            axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address=' + profile + '&limit=20&offset=' + offset)
+                .then(response => {
 
-                if (response.data.kitties.length > 0) {
-                    setTimeout(this.loadOtherCKProfile(profile, offset + 20), 500);
-                } else {
-                    //Fetch the DNA
-                    this.getKittyDna()
-                        .then(() => {this.state.loading = false; });
-                }
-            })
+                    for (let i in response.data.kitties) {
+                        this.state.profileKitties.push(response.data.kitties[i]);
+                    }
+
+                    if (response.data.kitties.length > 0) {
+                        setTimeout(this.loadOtherCKProfile(profile, offset + 20), 500);
+                    } else {
+                        //Fetch the DNA
+                        this.getKittyDna()
+                            .then(() => {
+                                this.state.loading = false;
+                            });
+                    }
+                });
+        }
     }
 };
 
