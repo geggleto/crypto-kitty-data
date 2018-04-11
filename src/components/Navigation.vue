@@ -8,7 +8,6 @@
         <div class="navbar-menu">
             <div class="navbar-start" v-if="profile !== ''">
                 <router-link to="/" class="navbar-item">DNA Dashboard</router-link>
-                <router-link to="/kitty-clock" class="navbar-item">KittyClock</router-link>
             </div>
 
             <div class="navbar-end">

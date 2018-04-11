@@ -5,7 +5,8 @@ let store = {
         profile : '',
         dnaMember : '',
         kittyDna: [],
-        profileKitties : []
+        profileKitties : [],
+        loading : false
     },
     getKittyDna() {
         return axios.post('http://dna.cryptokittydata.info/fetch/dna',
@@ -21,25 +22,8 @@ let store = {
             this.state.kittyDna = response.data;
         });
     },
-    loadCKProfile(offset) {
-        let profile = this.state.profile;
-
-        axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address='+profile+'&limit=20&offset='+offset)
-            .then(response => {
-
-                for (let i in response.data.kitties) {
-                    this.state.profileKitties.push(response.data.kitties[i]);
-                }
-
-                if (response.data.kitties.length > 0) {
-                    setTimeout(this.loadCKProfile(offset + 20), 500);
-                } else {
-                    //Fetch the DNA
-                    this.getKittyDna();
-                }
-            })
-    },
     loadOtherCKProfile(profile, offset) {
+        this.state.loading = true;
 
         axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address='+profile+'&limit=20&offset='+offset)
             .then(response => {
@@ -52,7 +36,8 @@ let store = {
                     setTimeout(this.loadOtherCKProfile(profile, offset + 20), 500);
                 } else {
                     //Fetch the DNA
-                    this.getKittyDna();
+                    this.getKittyDna()
+                        .then(() => {this.state.loading = false; });
                 }
             })
     }

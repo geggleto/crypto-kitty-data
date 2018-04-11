@@ -6,7 +6,7 @@
             <!-- Left side -->
             <div class="level-left">
                 <div class="level-item">
-                    <p class="subtitle is-5">
+                    <p class="subtitle">
                         <strong>{{ profileKitties.length }}</strong> Kitties Loaded!
                     </p>
                 </div>
@@ -15,7 +15,24 @@
 
             <!-- Right side -->
             <div class="level-right">
-
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input class="input" type="text" v-model="uiProfile">
+                        </div>
+                        <div class="control">
+                            <a class="button is-success" v-on:click="loadProfile" v-bind:class="{'is-loading' : loading}">
+                                Load
+                            </a>
+                            <a class="button is-warning" v-on:click="loadKittyClock" v-bind:class="{'is-loading' : loading}">
+                                KittyClock
+                            </a>
+                            <a class="button is-danger" v-on:click="resetProfile" v-bind:class="{'is-loading' : loading}">
+                                Reset
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
         <table class="table is-bordered is-striped is-narrow is-hoverable ">
@@ -169,11 +186,12 @@
             state.genSort = true;
             state.price = false;
             state.idSort = true;
+            state.uiProfile = state.profile;
 
             return state;
         },
         created() {
-            store.loadCKProfile(0);
+            this.loadProfile();
         },
         methods : {
             fromWei(price) {
@@ -252,7 +270,19 @@
                 }
             },
             getUrl() {
-                return 'http://dna.cryptokittydata.info//dna/profile/'+this.profile+'/csv';
+                return 'http://dna.cryptokittydata.info//dna/profile/'+this.uiProfile+'/csv';
+            },
+            loadProfile() {
+                this.profileKitties = [];
+                store.loadOtherCKProfile(this.uiProfile, 0);
+            },
+            loadKittyClock() {
+                this.uiProfile = '0x06012c8cf97bead5deae237070f9587f8e7a266d';
+                this.loadProfile();
+            },
+            resetProfile() {
+                this.uiProfile = this.profile;
+                this.loadProfile();
             }
         }
     }
