@@ -8,7 +8,10 @@ let store = {
         profileKitties : [],
         loading : false,
         isShown : false,
-        status : true
+        status : true,
+        searchDna : [],
+        isSearching : false,
+        count : 0
     },
     getKittyDna() {
         return axios.post('http://dna.cryptokittydata.info/fetch/dna',

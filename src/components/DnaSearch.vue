@@ -150,8 +150,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="kitty, id in searchDna">
-                <td><a v-bind:href="getLink(id)" target="_blank">{{ id }}</a></td>
+            <tr v-for="kitty in searchDna">
+                <td><a v-bind:href="getLink(kitty.id)" target="_blank">{{ kitty.id }}</a></td>
                 <td>{{ kitty.gen }}</td>
                 <td>{{ kitty.sale }}</td>
 
@@ -681,28 +681,28 @@
                 }
             },
             sortProfileByPriceUp(a, b) {
-                if (this.fromWei(a.sale).substr(0, 6) > this.fromWei(b.sale).substr(0, 6)) {
+                if (Number.parseFloat(this.fromWei(a.sale)) > Number.parseFloat(this.fromWei(b.sale))) {
                     return -1;
                 } else {
                     return 1;
                 }
             },
             sortProfileByPriceDown(a, b) {
-                if (this.fromWei(a.sale).substr(0, 6) < this.fromWei(b.sale).substr(0, 6)) {
+                if (Number.parseFloat(this.fromWei(a.sale)) < Number.parseFloat(this.fromWei(b.sale))) {
                     return -1;
                 } else {
                     return 1;
                 }
             },
             sortProfileByIdUp(a, b) {
-                if (a.id > b.id) {
+                if (Number.parseInt(a.id) > Number.parseInt(b.id)) {
                     return -1;
                 } else {
                     return 1;
                 }
             },
             sortProfileByIdDown(a, b) {
-                if (a.id < b.id) {
+                if (Number.parseInt(a.id) < Number.parseInt(b.id)) {
                     return -1;
                 } else {
                     return 1;
@@ -765,9 +765,16 @@
             },
             search () {
                 this.isSearching = true;
+                this.searchDna = [];
+
                 axios.post('http://dna.cryptokittydata.info/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
                     .then(response => {
-                        this.searchDna = response.data.results;
+                        for (let i in response.data.results) {
+                            let obj = response.data.results[i];
+                            obj.id = i;
+                            this.searchDna.push(obj);
+                        }
+
                         this.count = response.data.count;
 
                         this.isSearching = false;
