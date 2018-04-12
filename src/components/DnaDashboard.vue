@@ -330,7 +330,7 @@
                 let content = this.shareableUrl();
 
                 let textArea = document.createElement("textarea");
-                textArea.value = text;
+                textArea.value = content;
                 document.body.appendChild(textArea);
                 textArea.select();
 
