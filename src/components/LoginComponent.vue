@@ -33,12 +33,19 @@
         name: 'Login',
         data() {
             return {
+                profile : ''
             }
         },
         created : () => {
+
+            store.load();
+
             if (typeof web3 !== 'undefined') {
                 this.profile = web3.eth.accounts[0];
-                console.log(this.profile);
+
+                if (store.state.profile !== this.profile) {
+                    store.state.profile = '';
+                }
             }
         },
         methods : {
@@ -58,6 +65,8 @@
                     } else {
                         store.state.profile = this.profile;
                     }
+
+                    store.save();
                 });
             },
         }

@@ -48,6 +48,19 @@ let store = {
                     }
                 });
         }
+    },
+    save() {
+        if (window && window.localStorage) {
+            window.localStorage.setItem('state', JSON.stringify(this.state));
+        }
+    },
+    load() {
+        if (window && window.localStorage) {
+            let value = window.localStorage.getItem('state');
+            if (value) {
+                this.state.profile = JSON.parse(value).profile;
+            }
+        }
     }
 };
 

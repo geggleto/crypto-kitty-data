@@ -52,6 +52,11 @@
                         <input class="input" type="text" v-model="offset">
                     </div>
                 </div>
+                <div class="field">
+                    <label class="label">
+                        Count: {{ count }} / 500
+                    </label>
+                </div>
             </div>
             <div class="column">
                 <div class="field">
@@ -226,6 +231,7 @@
             state.r2 = false;
             state.r3 = false;
             state.offset = 0;
+            state.count = 0;
 
             state.dnaData = {
                 "fur": {
@@ -761,7 +767,8 @@
                 this.isSearching = true;
                 axios.post('http://dna.cryptokittydata.info/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
                     .then(response => {
-                        this.searchDna = response.data;
+                        this.searchDna = response.data.results;
+                        this.count = response.data.count;
 
                         this.isSearching = false;
                     });
