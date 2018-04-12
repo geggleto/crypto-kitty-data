@@ -7,7 +7,8 @@ let store = {
         kittyDna: [],
         profileKitties : [],
         loading : false,
-        isShown : false
+        isShown : false,
+        status : true
     },
     getKittyDna() {
         return axios.post('http://dna.cryptokittydata.info/fetch/dna',
@@ -47,6 +48,10 @@ let store = {
                                 this.state.loading = false;
                             });
                     }
+                }).catch(() => {
+                    this.getKittyDna()
+                        .then(() => {this.state.loading = false; });
+                   this.state.status = false;
                 });
         }
     },

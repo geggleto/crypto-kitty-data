@@ -6,6 +6,15 @@
                 <div class="level-left">
                     <div class="level-item">
                         <h1 class="title">DNA Dashboard</h1>
+
+                        <span class="icon has-text-success" v-if="status === true">
+                          <i class="fas fa-check-circle"></i>
+                        </span>
+
+                        <span class="icon has-text-danger tooltip" v-if="status === false" data-tooltip="There was a problem accessing the CK API, try again in 1 minute">
+                          <i class="fas fa-check-circle"></i>
+                        </span>
+
                     </div>
                 </div>
 
