@@ -6,7 +6,8 @@ let store = {
         dnaMember : '',
         kittyDna: [],
         profileKitties : [],
-        loading : false
+        loading : false,
+        isShown : false
     },
     getKittyDna() {
         return axios.post('http://dna.cryptokittydata.info/fetch/dna',
