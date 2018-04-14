@@ -20,11 +20,7 @@ export default {
         return store.state;
     },
     created() {
-        if (this.profile !== '') {
-            this.$router.push('/dashboard');
-        } else {
-            this.$router.push('/');
-        }
+
     }
 }
 </script>
