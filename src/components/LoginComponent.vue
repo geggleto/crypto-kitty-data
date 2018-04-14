@@ -1,9 +1,21 @@
 <template>
-    <div>
+
+    <section class="section">
         <div class="columns">
-            <div class="column is-2"></div>
-            <div class="column is-8">
-                <section class="section">
+            <div class="column is-3"></div>
+            <div class="column is-6">
+
+                    <article class="message is-info">
+                        <div class="message-header">
+                            <p>Crypto Kitty Data Services</p>
+                        </div>
+                        <div class="message-body">
+                            CKD offers player power-tools to play cryptokitties. Our first free tool DNA Dashboard allows players to
+                            visualize their kitty DNA sequences. We offer various other services as well including a DNA Search tool
+                            which is currently available for a fixed price during our beta-phase. <router-link to="/search-info">Click here for more information</router-link>
+                        </div>
+                    </article>
+
                     <article class="message is-dark">
                         <div class="message-header"><p>Login</p></div>
                         <div class="message-body"><!---->
@@ -18,11 +30,10 @@
                             </div>
                         </div>
                     </article>
-                </section>
             </div>
-            <div class="column is-2"></div>
+            <div class="column is-3"></div>
         </div>
-    </div>
+    </section>
 
 </template>
 

@@ -2,14 +2,11 @@
     <div id="app">
         <navigation />
 
-        <login-component v-if="profile === ''" />
-
-        <router-view v-if="profile !== ''"/>
+        <router-view/>
     </div>
 </template>
 
 <script>
-  import LoginComponent from './components/LoginComponent';
   import Navigation from './components/Navigation';
 
   import store from './store';
@@ -17,11 +14,17 @@
 export default {
     name: 'app',
     components: {
-        Navigation,
-        LoginComponent
+        Navigation
     },
     data() {
         return store.state;
+    },
+    created() {
+        if (this.profile !== '') {
+            this.$router.push('/dashboard');
+        } else {
+            this.$router.push('/');
+        }
     }
 }
 </script>

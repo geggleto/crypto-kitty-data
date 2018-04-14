@@ -6,8 +6,23 @@
             </a>
         </div>
         <div class="navbar-menu">
-            <div class="navbar-start" v-if="profile !== ''">
-                <router-link to="/" class="navbar-item">DNA Dashboard</router-link>
+            <div class="navbar-start">
+                <router-link to="/" class="navbar-item" v-if="profile === ''" >Login</router-link>
+                <router-link to="/dashboard" class="navbar-item" v-if="profile !== ''" >DNA Dashboard</router-link>
+
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Product Info
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <router-link to="/dashboard-info" class="navbar-item">DNA Dashboard (Free)</router-link>
+                        <hr class="navbar-divider" />
+                        <router-link to="/search-info" class="navbar-item">DNA Search (Paid)</router-link>
+                    </div>
+                </div>
+
             </div>
 
             <div class="navbar-end">
