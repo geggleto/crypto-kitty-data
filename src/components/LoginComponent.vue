@@ -77,7 +77,9 @@
                         store.state.profile = this.profile;
                     }
 
-                    store.save();
+                    store.getAuthorizations().then(() => {
+                        store.save();
+                    });
                 });
             },
         }

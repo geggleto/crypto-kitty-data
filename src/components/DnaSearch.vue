@@ -209,9 +209,15 @@
     import qs from 'qs';
     import axios from 'axios';
 
+    import globalStorage from './../store';
+
     export default {
         name: 'dnaDashboard',
-
+        created() {
+            if (!globalStorage.state.isAuthorized) {
+                this.$router.push('/');
+            }
+        },
         data() {
             let state = {};
 

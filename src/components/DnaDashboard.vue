@@ -61,28 +61,85 @@
                     </div>
                 </div>
             </nav>
+
+            <nav class="level">
+                <!-- Left side -->
+                <div class="level-left">
+                    <div class="level-item">
+                        <input class="input" type="text" placeholder="Filter" v-model="filter">
+                    </div>
+                </div>
+                <div cllass="level-right">
+                    <div class="buttons level-item">
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : furColumn }"
+                                v-on:click="furColumn = !furColumn">Fur</a>
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : patternColumn }"
+                                v-on:click="patternColumn = !patternColumn">Pattern</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : eyeColorColumn }"
+                                v-on:click="eyeColorColumn = !eyeColorColumn">Eye-Color</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : eyeShapeColumn }"
+                                v-on:click="eyeShapeColumn = !eyeShapeColumn">Eye-Type</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : bodyColorColumn }"
+                                v-on:click="bodyColorColumn = !bodyColorColumn">Base-Color</a>
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : hilightColorColumn }"
+                                v-on:click="hilightColorColumn = !hilightColorColumn">HighLi-Col</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : accentColorColumn }"
+                                v-on:click="accentColorColumn = !accentColorColumn">Accent-Col</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : wildColumn }"
+                                v-on:click="wildColumn = !wildColumn">Wild</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : mouthColumn }"
+                                v-on:click="mouthColumn = !mouthColumn">Mouth</a>
+                    </div>
+                </div>
+            </nav>
+
+
             <table class="table is-bordered is-striped is-narrow is-hoverable ">
                 <thead>
                 <tr>
                     <th colspan="6"><a v-bind:href="getUrl()">Download CSV</a></th>
 
-                    <th colspan="4" class="cattribute-border-left">Fur</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!furColumn" >Fur</th>
 
-                    <th colspan="4" class="cattribute-border-left">Pattern</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!patternColumn" >Pattern</th>
 
-                    <th colspan="4" class="cattribute-border-left">Eye-Color</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!eyeColorColumn" >Eye-Color</th>
 
-                    <th colspan="4" class="cattribute-border-left">Eye-Type</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!eyeShapeColumn" >Eye-Type</th>
 
-                    <th colspan="4"  class="cattribute-border-left">Base-Color</th>
+                    <th colspan="4"  class="cattribute-border-left" v-if="!bodyColorColumn" >Base-Color</th>
 
-                    <th colspan="4"  class="cattribute-border-left">HighLi-Col</th>
+                    <th colspan="4"  class="cattribute-border-left" v-if="!hilightColorColumn" >HighLi-Col</th>
 
-                    <th colspan="4" class="cattribute-border-left">Accent-Col</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!accentColorColumn" >Accent-Col</th>
 
-                    <th colspan="4"  class="cattribute-border-left">Wild</th>
+                    <th colspan="4"  class="cattribute-border-left" v-if="!wildColumn" >Wild</th>
 
-                    <th colspan="4" class="cattribute-border-left">Mouth</th>
+                    <th colspan="4" class="cattribute-border-left" v-if="!mouthColumn" >Mouth</th>
                 </tr>
                 <tr>
                     <th><a class="button is-small is-primary" v-on:click="sortIdProfile">ID</a></th>
@@ -92,54 +149,54 @@
                     <th>Cooldown</th>
                     <th>Ready</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="fur">R1</th>
-                    <th class="fur">R2</th>
-                    <th class="fur">R3</th>
+                    <th class="cattribute-border-left" v-if="!furColumn">D0</th>
+                    <th class="fur" v-if="!furColumn">R1</th>
+                    <th class="fur" v-if="!furColumn">R2</th>
+                    <th class="fur" v-if="!furColumn">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="pattern">R1</th>
-                    <th class="pattern">R2</th>
-                    <th class="pattern">R3</th>
+                    <th v-if="!patternColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!patternColumn" class="pattern">R1</th>
+                    <th v-if="!patternColumn" class="pattern">R2</th>
+                    <th v-if="!patternColumn" class="pattern">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="eyecolor">R1</th>
-                    <th class="eyecolor">R2</th>
-                    <th class="eyecolor">R3</th>
+                    <th v-if="!eyeColorColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!eyeColorColumn" class="eyecolor">R1</th>
+                    <th v-if="!eyeColorColumn" class="eyecolor">R2</th>
+                    <th v-if="!eyeColorColumn" class="eyecolor">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="eyeshape">R1</th>
-                    <th class="eyeshape">R2</th>
-                    <th class="eyeshape">R3</th>
+                    <th v-if="!eyeShapeColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!eyeShapeColumn" class="eyeshape">R1</th>
+                    <th v-if="!eyeShapeColumn" class="eyeshape">R2</th>
+                    <th v-if="!eyeShapeColumn" class="eyeshape">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="basecolor">R1</th>
-                    <th class="basecolor">R2</th>
-                    <th class="basecolor">R3</th>
+                    <th v-if="!bodyColorColumn"  class="cattribute-border-left">D0</th>
+                    <th v-if="!bodyColorColumn"  class="basecolor">R1</th>
+                    <th v-if="!bodyColorColumn"  class="basecolor">R2</th>
+                    <th v-if="!bodyColorColumn"  class="basecolor">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="highlightcolor">R1</th>
-                    <th class="highlightcolor">R2</th>
-                    <th class="highlightcolor">R3</th>
+                    <th v-if="!hilightColorColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!hilightColorColumn" class="highlightcolor">R1</th>
+                    <th v-if="!hilightColorColumn" class="highlightcolor">R2</th>
+                    <th v-if="!hilightColorColumn" class="highlightcolor">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="accentcolor">R1</th>
-                    <th class="accentcolor">R2</th>
-                    <th class="accentcolor">R3</th>
+                    <th v-if="!accentColorColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!accentColorColumn" class="accentcolor">R1</th>
+                    <th v-if="!accentColorColumn" class="accentcolor">R2</th>
+                    <th v-if="!accentColorColumn" class="accentcolor">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="wild">R1</th>
-                    <th class="wild">R2</th>
-                    <th class="wild">R3</th>
+                    <th v-if="!wildColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!wildColumn" class="wild">R1</th>
+                    <th v-if="!wildColumn" class="wild">R2</th>
+                    <th v-if="!wildColumn" class="wild">R3</th>
 
-                    <th class="cattribute-border-left">D0</th>
-                    <th class="mouth">R1</th>
-                    <th class="mouth">R2</th>
-                    <th class="mouth">R3</th>
+                    <th v-if="!mouthColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!mouthColumn" class="mouth">R1</th>
+                    <th v-if="!mouthColumn" class="mouth">R2</th>
+                    <th v-if="!mouthColumn" class="mouth">R3</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="kitty in profileKitties">
+                <tr v-for="kitty in filterKittyRow()">
                     <td><a v-bind:href="getLink(kitty.id)" target="_blank">{{ kitty.id }}</a></td>
                     <td>{{ kitty.generation }}</td>
                     <td>{{ kitty.name }}</td>
@@ -147,50 +204,50 @@
                     <td>{{ kitty.status.cooldown_index }}</td>
                     <td>{{ kitty.status.is_ready }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['body']['D0']">{{ kittyDna[kitty.id]['body']['D0'] }}</td>
-                    <td class="fur" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R1']">{{ kittyDna[kitty.id]['body']['R1'] }}</td>
-                    <td class="fur" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R2']">{{ kittyDna[kitty.id]['body']['R2'] }}</td>
-                    <td class="fur" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R3'] ">{{ kittyDna[kitty.id]['body']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['D0']">{{ kittyDna[kitty.id]['body']['D0'] }}</td>
+                    <td class="fur" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R1']">{{ kittyDna[kitty.id]['body']['R1'] }}</td>
+                    <td class="fur" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R2']">{{ kittyDna[kitty.id]['body']['R2'] }}</td>
+                    <td class="fur" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R3'] ">{{ kittyDna[kitty.id]['body']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['D0'] ">{{ kittyDna[kitty.id]['pattern']['D0'] }}</td>
-                    <td class="pattern" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R1']">{{ kittyDna[kitty.id]['pattern']['R1'] }}</td>
-                    <td class="pattern" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R2']">{{ kittyDna[kitty.id]['pattern']['R2'] }}</td>
-                    <td class="pattern" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R3']">{{ kittyDna[kitty.id]['pattern']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!patternColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['D0'] ">{{ kittyDna[kitty.id]['pattern']['D0'] }}</td>
+                    <td class="pattern" v-if="!patternColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R1']">{{ kittyDna[kitty.id]['pattern']['R1'] }}</td>
+                    <td class="pattern" v-if="!patternColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R2']">{{ kittyDna[kitty.id]['pattern']['R2'] }}</td>
+                    <td class="pattern" v-if="!patternColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['pattern']['R3']">{{ kittyDna[kitty.id]['pattern']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['D0'] ">{{ kittyDna[kitty.id]['eyecolor']['D0'] }}</td>
-                    <td class="eyecolor" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R1'] ">{{ kittyDna[kitty.id]['eyecolor']['R1'] }}</td>
-                    <td class="eyecolor" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R2'] ">{{ kittyDna[kitty.id]['eyecolor']['R2'] }}</td>
-                    <td class="eyecolor" v-if="kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R3'] ">{{ kittyDna[kitty.id]['eyecolor']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!eyeColorColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['D0'] ">{{ kittyDna[kitty.id]['eyecolor']['D0'] }}</td>
+                    <td class="eyecolor" v-if="!eyeColorColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R1'] ">{{ kittyDna[kitty.id]['eyecolor']['R1'] }}</td>
+                    <td class="eyecolor" v-if="!eyeColorColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R2'] ">{{ kittyDna[kitty.id]['eyecolor']['R2'] }}</td>
+                    <td class="eyecolor" v-if="!eyeColorColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['eyecolor']['R3'] ">{{ kittyDna[kitty.id]['eyecolor']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['D0'] }}</td>
-                    <td class="eyeshape" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R1'] }}</td>
-                    <td class="eyeshape" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R2'] }}</td>
-                    <td class="eyeshape" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!eyeShapeColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['D0'] }}</td>
+                    <td class="eyeshape" v-if="!eyeShapeColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R1'] }}</td>
+                    <td class="eyeshape" v-if="!eyeShapeColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R2'] }}</td>
+                    <td class="eyeshape" v-if="!eyeShapeColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['eyetype']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['D0'] }}</td>
-                    <td class="basecolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R1'] }}</td>
-                    <td class="basecolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R2'] }}</td>
-                    <td class="basecolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!bodyColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['D0'] }}</td>
+                    <td class="basecolor" v-if="!bodyColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R1'] }}</td>
+                    <td class="basecolor" v-if="!bodyColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R2'] }}</td>
+                    <td class="basecolor" v-if="!bodyColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['bodycolor']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['D0'] }}</td>
-                    <td class="highlightcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R1'] }}</td>
-                    <td class="highlightcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R2'] }}</td>
-                    <td class="highlightcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!hilightColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['D0'] }}</td>
+                    <td class="highlightcolor" v-if="!hilightColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R1'] }}</td>
+                    <td class="highlightcolor" v-if="!hilightColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R2'] }}</td>
+                    <td class="highlightcolor" v-if="!hilightColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['patterncolor']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['D0'] }}</td>
-                    <td class="accentcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R1'] }}</td>
-                    <td class="accentcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R2'] }}</td>
-                    <td class="accentcolor" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!accentColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['D0'] }}</td>
+                    <td class="accentcolor" v-if="!accentColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R1'] }}</td>
+                    <td class="accentcolor" v-if="!accentColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R2'] }}</td>
+                    <td class="accentcolor" v-if="!accentColorColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secondarycolor']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['D0'] }}</td>
-                    <td class="wild" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R1'] }}</td>
-                    <td class="wild" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R2'] }}</td>
-                    <td class="wild" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!wildColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['D0'] }}</td>
+                    <td class="wild" v-if="!wildColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R1'] }}</td>
+                    <td class="wild" v-if="!wildColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R2'] }}</td>
+                    <td class="wild" v-if="!wildColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['wild']['R3'] }}</td>
 
-                    <td class="cattribute-border-left" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['D0'] }}</td>
-                    <td class="mouth" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R1'] }}</td>
-                    <td class="mouth" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R2'] }}</td>
-                    <td class="mouth" v-if="kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R3'] }}</td>
+                    <td class="cattribute-border-left" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['D0'] }}</td>
+                    <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R1'] }}</td>
+                    <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R2'] }}</td>
+                    <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R3'] }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -350,6 +407,17 @@
                 }
 
                 document.body.removeChild(textArea);
+            },
+            filterKittyRow() {
+                if (this.filter === '') {
+                    return this.profileKitties;
+                } else {
+                    return this.profileKitties.filter(kitty => {
+                        let dna = this.kittyDna[kitty.id];
+
+                        return JSON.stringify(dna).indexOf(this.filter) >= 0;
+                    });
+                }
             }
         }
     }

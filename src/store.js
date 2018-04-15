@@ -11,7 +11,21 @@ let store = {
         status : true,
         searchDna : [],
         isSearching : false,
-        count : 0
+        count : 0,
+        filter : '',
+
+        furColumn : false,
+        patternColumn : false,
+        eyeColorColumn : false,
+        eyeShapeColumn : false,
+        bodyColorColumn : false,
+        hilightColorColumn : false,
+        accentColorColumn : false,
+        wildColumn : false,
+        mouthColumn : false,
+
+        isAuthorized : false
+
     },
     getKittyDna() {
         return axios.post('http://dna.cryptokittydata.info/fetch/dna',
@@ -36,6 +50,7 @@ let store = {
         } else {
 
             axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address=' + profile + '&limit=20&offset=' + offset)
+            //axios.get('https://api.cryptokitties.co/kitties/all/'+ profile)
                 .then(response => {
 
                     for (let i in response.data.kitties) {
@@ -70,6 +85,14 @@ let store = {
                 this.state.profile = JSON.parse(value).profile;
             }
         }
+    },
+    getAuthorizations()
+    {
+        return axios.post('http://dna.cryptokittydata.info/authorizations', {
+            profile : this.state.profile.toUpperCase()
+        }).then(response => {
+            this.state.isAuthorized = response.data.isAuthorized
+        });
     }
 };
 

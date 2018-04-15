@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 
 const routes = [
     { path: '/dashboard', component: DnaDashboard },
-    { path: '/v9/search', component: DnaSearch },
+    { path: '/search', component: DnaSearch },
     { path: '/search-info', component: DnaSearchInfo },
     { path: '/', component: Login },
     { path: '/dashboard-info', component: DnaDashboardInfo}
