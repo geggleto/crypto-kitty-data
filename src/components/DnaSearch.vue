@@ -773,7 +773,7 @@
                 this.isSearching = true;
                 this.searchDna = [];
 
-                axios.post('http://dna.cryptokittydata.info/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
+                axios.post('http://dna.cryptokittydata.info/'+globalStorage.state.profile+'/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
                     .then(response => {
                         for (let i in response.data.results) {
                             let obj = response.data.results[i];
@@ -782,9 +782,10 @@
                         }
 
                         this.count = response.data.count;
-
                         this.isSearching = false;
-                    });
+                    }).catch((err) => {
+                        this.isSearching = false;
+                    })
             }
         }
     }
