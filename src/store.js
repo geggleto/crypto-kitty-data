@@ -92,7 +92,9 @@ let store = {
             profile : this.state.profile.toUpperCase()
         }).then(response => {
             this.state.isAuthorized = response.data.isAuthorized
-        });
+        }).catch((err) => {
+            //should do something here
+        })
     }
 };
 

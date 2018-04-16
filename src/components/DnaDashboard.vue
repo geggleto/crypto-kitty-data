@@ -282,7 +282,7 @@
                 this.uiProfile = this.profile;
             }
 
-            this.loadProfile();
+            //this.loadProfile();
         },
         methods : {
             fromWei(price) {
