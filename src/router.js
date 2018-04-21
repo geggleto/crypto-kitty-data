@@ -5,6 +5,7 @@ import DnaSearch from './components/DnaSearch';
 import DnaSearchInfo from './components/DnaSearchInfo';
 import Login from './components/LoginComponent';
 import DnaDashboardInfo from './components/DnaDashboardInfo';
+import CattributePrices from './components/CattributePrices';
 
 Vue.use(VueRouter);
 
@@ -14,7 +15,8 @@ const routes = [
     { path: '/search', component: DnaSearch },
     { path: '/search-info', component: DnaSearchInfo },
     { path: '/', component: Login },
-    { path: '/dashboard-info', component: DnaDashboardInfo}
+    { path: '/dashboard-info', component: DnaDashboardInfo},
+    { path: '/attributes', component: CattributePrices}
 ];
 
 const router = new VueRouter({
