@@ -21,10 +21,15 @@ let store = {
         bodyColorColumn : false,
         hilightColorColumn : false,
         accentColorColumn : false,
+
         wildColumn : false,
         mouthColumn : false,
+        secretColumn : false,
+        unknownColumn : false,
+        mysteryColumn : false,
 
-        isAuthorized : false
+        isAuthorized : false,
+        mobile_menu : false
 
     },
     getKittyDna() {

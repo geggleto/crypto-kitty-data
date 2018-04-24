@@ -113,6 +113,21 @@
                                 class="button"
                                 v-bind:class="{ 'is-dark' : mouthColumn }"
                                 v-on:click="mouthColumn = !mouthColumn">Mouth</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : mysteryColumn }"
+                                v-on:click="mysteryColumn = !mysteryColumn">Mystery</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : secretColumn }"
+                                v-on:click="secretColumn = !secretColumn">Secret</a>
+
+                        <a
+                                class="button"
+                                v-bind:class="{ 'is-dark' : unknownColumn }"
+                                v-on:click="unknownColumn = !unknownColumn">Unknown</a>
                     </div>
                 </div>
             </nav>
@@ -140,6 +155,12 @@
                     <th colspan="4"  class="cattribute-border-left" v-if="!wildColumn" >Wild</th>
 
                     <th colspan="4" class="cattribute-border-left" v-if="!mouthColumn" >Mouth</th>
+
+                    <th colspan="4" class="cattribute-border-left" v-if="!mysteryColumn" >Mystery</th>
+
+                    <th colspan="4" class="cattribute-border-left" v-if="!secretColumn" >Secret</th>
+
+                    <th colspan="4" class="cattribute-border-left" v-if="!unknownColumn" >Unknown</th>
                 </tr>
                 <tr>
                     <th><a class="button is-small is-primary" v-on:click="sortIdProfile">ID</a></th>
@@ -193,6 +214,21 @@
                     <th v-if="!mouthColumn" class="mouth">R1</th>
                     <th v-if="!mouthColumn" class="mouth">R2</th>
                     <th v-if="!mouthColumn" class="mouth">R3</th>
+
+                    <th v-if="!mysteryColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!mysteryColumn" class="mouth">R1</th>
+                    <th v-if="!mysteryColumn" class="mouth">R2</th>
+                    <th v-if="!mysteryColumn" class="mouth">R3</th>
+
+                    <th v-if="!secretColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!secretColumn" class="mouth">R1</th>
+                    <th v-if="!secretColumn" class="mouth">R2</th>
+                    <th v-if="!secretColumn" class="mouth">R3</th>
+
+                    <th v-if="!unknownColumn" class="cattribute-border-left">D0</th>
+                    <th v-if="!unknownColumn" class="mouth">R1</th>
+                    <th v-if="!unknownColumn" class="mouth">R2</th>
+                    <th v-if="!unknownColumn" class="mouth">R3</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -248,6 +284,22 @@
                     <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R1'] }}</td>
                     <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R2'] }}</td>
                     <td class="mouth" v-if="!mouthColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mouth']['R3'] }}</td>
+
+                    <td class="cattribute-border-left" v-if="!mysteryColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mystery']['D0'] }}</td>
+                    <td class="mouth" v-if="!mysteryColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mystery']['R1'] }}</td>
+                    <td class="mouth" v-if="!mysteryColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mystery']['R2'] }}</td>
+                    <td class="mouth" v-if="!mysteryColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['mystery']['R3'] }}</td>
+
+                    <td class="cattribute-border-left" v-if="!secretColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secret']['D0'] }}</td>
+                    <td class="mouth" v-if="!secretColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secret']['R1'] }}</td>
+                    <td class="mouth" v-if="!secretColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secret']['R2'] }}</td>
+                    <td class="mouth" v-if="!secretColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['secret']['R3'] }}</td>
+
+                    <td class="cattribute-border-left" v-if="!unknownColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['unknown']['D0'] }}</td>
+                    <td class="mouth" v-if="!unknownColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['unknown']['R1'] }}</td>
+                    <td class="mouth" v-if="!unknownColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['unknown']['R2'] }}</td>
+                    <td class="mouth" v-if="!unknownColumn && kittyDna[kitty.id]">{{ kittyDna[kitty.id]['unknown']['R3'] }}</td>
+
                 </tr>
                 </tbody>
             </table>
@@ -418,6 +470,75 @@
                         return JSON.stringify(dna).indexOf(this.filter) >= 0;
                     });
                 }
+            },
+            kaiToDec(kai) {
+                if (kai === "1") {
+                    return 0;
+                } else if (kai === "2") {
+                    return 1;
+                } else if (kai === "3") {
+                    return 2;
+                } else if (kai === "4") {
+                    return 3;
+                } else if (kai === "5") {
+                    return 4;
+                } else if (kai === "6") {
+                    return 5;
+                } else if (kai === "7") {
+                    return 6;
+                } else if (kai === "8") {
+                    return 7;
+                } else if (kai === "9") {
+                    return 8;
+                } else if (kai === "a") {
+                    return 9;
+                } else if (kai === "b") {
+                    return 10;
+                } else if (kai === "c") {
+                    return 11;
+                } else if (kai === "d") {
+                    return 12;
+                } else if (kai === "e") {
+                    return 13;
+                } else if (kai === "f") {
+                    return 14;
+                } else if (kai === "g") {
+                    return 15;
+                } else if (kai === "h") {
+                    return 16;
+                } else if (kai === "i") {
+                    return 17;
+                } else if (kai === "j") {
+                    return 18;
+                } else if (kai === "k") {
+                    return 19;
+                } else if (kai === "m") {
+                    return 20;
+                } else if (kai === "n") {
+                    return 21;
+                } else if (kai === "o") {
+                    return 22;
+                } else if (kai === "q") {
+                    return 23;
+                } else if (kai === "p") {
+                    return 24;
+                } else if (kai === "r") {
+                    return 25;
+                } else if (kai === "s") {
+                    return 26;
+                } else if (kai === "t") {
+                    return 27;
+                } else if (kai === "u") {
+                    return 28;
+                } else if (kai === "v") {
+                    return 29;
+                } else if (kai === "w") {
+                    return 30;
+                } else if (kai === "x") {
+                    return 31;
+                }
+
+                return -1;
             }
         }
     }
