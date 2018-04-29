@@ -97,6 +97,12 @@
                 <th colspan="4" class="cattribute-border-left">Wild</th>
 
                 <th colspan="4" class="cattribute-border-left">Mouth</th>
+
+                <th colspan="4" class="cattribute-border-left">Mystery</th>
+
+                <th colspan="4" class="cattribute-border-left">Secret</th>
+
+                <th colspan="4" class="cattribute-border-left">Unknown</th>
             </tr>
             <tr>
                 <th><a class="button is-small is-primary" v-on:click="sortIdProfile">ID</a></th>
@@ -142,6 +148,21 @@
                 <th class="wild">R1</th>
                 <th class="wild">R2</th>
                 <th class="wild">R3</th>
+
+                <th class="cattribute-border-left">D0</th>
+                <th class="mouth">R1</th>
+                <th class="mouth">R2</th>
+                <th class="mouth">R3</th>
+
+                <th class="cattribute-border-left">D0</th>
+                <th class="mouth">R1</th>
+                <th class="mouth">R2</th>
+                <th class="mouth">R3</th>
+
+                <th class="cattribute-border-left">D0</th>
+                <th class="mouth">R1</th>
+                <th class="mouth">R2</th>
+                <th class="mouth">R3</th>
 
                 <th class="cattribute-border-left">D0</th>
                 <th class="mouth">R1</th>
@@ -199,6 +220,22 @@
                 <td class="mouth">{{ kitty['mouth']['R1'] }}</td>
                 <td class="mouth">{{ kitty['mouth']['R2'] }}</td>
                 <td class="mouth">{{ kitty['mouth']['R3'] }}</td>
+
+                <td class="cattribute-border-left">{{ kitty['mystery']['D0'] }}</td>
+                <td class="mouth">{{ kitty['mystery']['R1'] }}</td>
+                <td class="mouth">{{ kitty['mystery']['R2'] }}</td>
+                <td class="mouth">{{ kitty['mystery']['R3'] }}</td>
+
+                <td class="cattribute-border-left">{{ kitty['secret']['D0'] }}</td>
+                <td class="mouth">{{ kitty['secret']['R1'] }}</td>
+                <td class="mouth">{{ kitty['secret']['R2'] }}</td>
+                <td class="mouth">{{ kitty['secret']['R3'] }}</td>
+
+                <td class="cattribute-border-left">{{ kitty['unknown']['D0'] }}</td>
+                <td class="mouth" >{{ kitty['unknown']['R1'] }}</td>
+                <td class="mouth" >{{ kitty['unknown']['R2'] }}</td>
+                <td class="mouth" >{{ kitty['unknown']['R3'] }}</td>
+
             </tr>
             </tbody>
         </table>
