@@ -54,7 +54,7 @@
                 </div>
                 <div class="field">
                     <label class="label">
-                        Count: {{ count }} / 500
+                        Count: {{ count }} / 100
                     </label>
                 </div>
             </div>
@@ -372,9 +372,7 @@
                 }
             },
             appendRaw (thing, value) {
-                console.log(this.queryString);
                 this.queryString += '&'+thing+'='+value;
-                console.log(this.queryString);
             },
             addParam () {
                 //need to find what category the cattribute belongs too
