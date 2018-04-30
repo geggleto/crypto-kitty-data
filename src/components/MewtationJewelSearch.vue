@@ -64,7 +64,7 @@
         methods: {
             search() {
                 this.isSearching = true;
-                axios.post('http://dna.cryptokittydata.info/search/mewtation', { cattribute : this.cattribute })
+                axios.post('https://dna.cryptokittydata.info/search/mewtation', { cattribute : this.cattribute })
                     .then(response => {
                         this.results = response.data;
                         this.isSearching = false;

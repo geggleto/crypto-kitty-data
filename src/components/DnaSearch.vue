@@ -284,7 +284,7 @@
             setupAutoComplete() {
 
                 if (this.dnaData === null) {
-                    axios.get('http://dna.cryptokittydata.info/dna/search').then(response => {
+                    axios.get('https://dna.cryptokittydata.info/dna/search').then(response => {
                         this.dnaData = response.data;
 
                         $("#cattribute").autocomplete({
@@ -428,7 +428,7 @@
                 this.isSearching = true;
                 this.searchDna = [];
 
-                axios.post('http://dna.cryptokittydata.info/'+globalStorage.state.profile+'/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
+                axios.post('https://dna.cryptokittydata.info/'+globalStorage.state.profile+'/search', qs.parse(this.queryString+"&offset="+Number.parseInt(this.offset) * 100))
                     .then(response => {
                         for (let i in response.data.results) {
                             let obj = response.data.results[i];

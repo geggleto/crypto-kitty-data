@@ -33,7 +33,7 @@ let store = {
 
     },
     getKittyDna() {
-        return axios.post('http://dna.cryptokittydata.info/fetch/dna',
+        return axios.post('https://dna.cryptokittydata.info/fetch/dna',
             {
                 kitties : this.state.profileKitties.map(
                     kitty => {
@@ -93,7 +93,7 @@ let store = {
     },
     getAuthorizations()
     {
-        return axios.post('http://dna.cryptokittydata.info/authorizations', {
+        return axios.post('https://dna.cryptokittydata.info/authorizations', {
             profile : this.state.profile.toUpperCase()
         }).then(response => {
             this.state.isAuthorized = response.data.isAuthorized

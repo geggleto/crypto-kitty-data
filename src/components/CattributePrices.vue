@@ -44,7 +44,7 @@
             };
         },
         created() {
-            axios.get('http://dna.cryptokittydata.info/cattribute/prices')
+            axios.get('https://dna.cryptokittydata.info/cattribute/prices')
                 .then(response => {
                     this.cattributes = response.data;
                 });

@@ -427,7 +427,7 @@
                 }
             },
             getUrl() {
-                return 'http://dna.cryptokittydata.info/dna/profile/'+this.uiProfile+'/csv';
+                return 'https://dna.cryptokittydata.info/dna/profile/'+this.uiProfile+'/csv';
             },
             loadProfile() {
                 this.profileKitties = [];
@@ -442,7 +442,7 @@
                 this.loadProfile();
             },
             shareableUrl() {
-                return 'http://cryptokittydata.info/#/?profile='+this.uiProfile;
+                return 'https://cryptokittydata.info/#/?profile='+this.uiProfile;
             },
             copyToClipboard() {
                 let content = this.shareableUrl();
