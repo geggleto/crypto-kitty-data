@@ -79,11 +79,6 @@
         }
 
         getCattributePrices(cattribute) {
-            // need to stash these for AJAX response
-            var gen0_svg = this.gen0_svg;
-            var gen1_5_svg = this.gen1_5_svg;
-            var g =
-
             axios.get(`${CATTRIBUTE_PRICE_API}${cattribute}`)
                 .then(response => {
 
@@ -116,7 +111,7 @@
 
                     // Add the X Axis
                     this.gen0_svg.append("g").attr("transform", "translate(0," + this.height + ")").call(d3.axisBottom(this.xScalar))
-                        .append("text").attr("transform", "rotate(-90)").attr("x", this.height-10).attr("dy", "1em").attr("fill", "#000").attr("class", "label").text("ETH");
+                        .append("text").attr("transform", "rotate(-90)").attr("x", this.height-10).attr("dy", "1em").attr("fill", "#000").text("ETH");
 
                     // Add the Y Axis
                     this.gen0_svg.append("g").call(d3.axisLeft(this.yScalar));
@@ -124,7 +119,7 @@
                     this.gen0_svg.append("text").attr("x", this.width/2).text(cattribute).attr("class", "label");
 
                     // Add the valueline path.
-                    this.gen0_svg.append("path").data([groups[0]]).attr("class", "line").attr("d", this.valueline).attr("fill", "none");
+                    this.gen0_svg.append("path").data([groups[0]]).attr("class", "line").attr("d", this.valueline).attr("fill", "none").style("stroke", d => this.zScalar(d[0].generation));
 
                     // Add legend
                     this.gen0_svg.append("g")
