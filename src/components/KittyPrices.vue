@@ -2,13 +2,14 @@
     <div class="container">
         <h1 class="title">Kitty Evaluator Beta</h1>
         <h1 class="subtitle">Updated Daily - Evaluates Gen 0,1,2,3,4,5 Kitties</h1>
+        <h2 class="subtitle">Does not value fancies or exclusives since they don't have cattributes that are readable</h2>
 
         <div class="columns">
             <div class="column is-2">
                 <input class="input" type="text" placeholder="KittyId" v-model="kittyId">
                 <a class="button is-primary" v-on:click="evaluateKitty">Evaluate</a>
                 <br />
-                <div class="content has-text-weight-bold">{{ value }}</div>
+                <div class="content has-text-weight-bold">{{ value }} ETH-ish</div>
             </div>
         </div>
     </div>
