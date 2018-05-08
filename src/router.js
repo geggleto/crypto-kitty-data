@@ -7,6 +7,7 @@ import Login from './components/LoginComponent';
 import DnaDashboardInfo from './components/DnaDashboardInfo';
 import CattributePrices from './components/CattributePrices';
 import MewtationJewelSearch from './components/MewtationJewelSearch';
+import KittyPrices from './components/KittyPrices';
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,7 @@ const routes = [
     { path: '/dashboard-info', component: DnaDashboardInfo},
     { path: '/attributes', component: CattributePrices},
     { path: '/mewtation-search', component: MewtationJewelSearch},
+    { path: '/eval', component: KittyPrices},
 ];
 
 const router = new VueRouter({
