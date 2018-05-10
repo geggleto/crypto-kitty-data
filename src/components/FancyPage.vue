@@ -4,10 +4,9 @@
         <h2 class="subtitle">Click a kitty to find them on the market</h2>
         <div class="columns is-multiline">
 
-            <div class="column is-2 holographic-background">
+            <div class="column is-2">
                 <a href="https://www.cryptokitties.co/kitty/1" target="_blank">
                     <flippy-kitty src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png"></flippy-kitty>
-                    <!-- <img class="image holographic-background" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png">-->
                 </a>
             </div>
 
@@ -199,50 +198,5 @@
 </script>
 
 <style>
-    .holographic-background {
-        color: #fff;
-        background: linear-gradient( -45deg, #ffcf5b, #ff99a8, #c8daff, #bbffef);
-        background-size: 400% 400%;
-        -webkit-animation: Gradient 4s ease infinite;
-        -moz-animation: Gradient 4s ease infinite;
-        animation: Gradient 4s ease infinite;
-        border: #0a0a0a 1px solid;
-    }
-
-    @-webkit-keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
-
-    @-moz-keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
-
-    @keyframes Gradient {
-        0% {
-            background-position: 0% 50%
-        }
-        50% {
-            background-position: 100% 50%
-        }
-        100% {
-            background-position: 0% 50%
-        }
-    }
 
 </style>

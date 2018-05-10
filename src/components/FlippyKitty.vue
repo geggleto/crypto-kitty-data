@@ -2,7 +2,7 @@
     <div id="f1_container">
         <div id="f1_card" class="shadow">
             <div class="front face">
-                <img class="image" v-bind:src="src"/>
+                <img class="image holographic-background" v-bind:src="src"/>
             </div>
             <div class="back face center">
                 <p>Kitty Battles Coming Soon</p>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     #f1_container {
         position: relative;
         z-index: 1;
@@ -47,5 +47,51 @@ export default {
         box-sizing: border-box;
         color: black;
         text-align: center;
+    }
+
+    .holographic-background {
+        color: #fff;
+        background: linear-gradient( -45deg, #ffcf5b, #ff99a8, #c8daff, #bbffef);
+        background-size: 400% 400%;
+        -webkit-animation: Gradient 4s ease infinite;
+        -moz-animation: Gradient 4s ease infinite;
+        animation: Gradient 4s ease infinite;
+        border: #0a0a0a 1px solid;
+    }
+
+    @-webkit-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @-moz-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
     }
 </style>
