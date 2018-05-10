@@ -23,7 +23,6 @@ export default {
 <style scoped>
     #f1_container {
         position: relative;
-        z-index: 1;
         perspective: 1000;
     }
     #f1_card {
@@ -36,13 +35,11 @@ export default {
         transform: rotateY(180deg);
     }
     .face {
-        position: absolute;
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
     }
     .back {
-        display: block;
         transform: rotateY(180deg);
         box-sizing: border-box;
         color: black;
