@@ -4,9 +4,10 @@
         <h2 class="subtitle">Click a kitty to find them on the market</h2>
         <div class="columns is-multiline">
 
-            <div class="column is-2">
+            <div class="column is-2 holographic-background">
                 <a href="https://www.cryptokitties.co/kitty/1" target="_blank">
-                    <img class="image holographic-background" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png">
+                    <flippy-kitty src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png"></flippy-kitty>
+                    <!-- <img class="image holographic-background" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png">-->
                 </a>
             </div>
 
@@ -182,13 +183,18 @@
 </template>
 
 <script>
+    import FlippyKitty from './FlippyKitty';
+
     export default {
         name : 'fancyPage',
         data() {
-
             return {
             };
+        },
+        components : {
+            FlippyKitty
         }
+
     }
 </script>
 
