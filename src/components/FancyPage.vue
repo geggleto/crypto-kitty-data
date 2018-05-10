@@ -171,6 +171,12 @@
                     <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/330.png">
                 </a>
             </div>
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/marketplace/sale?search=fancy%3Abugcat" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/103.png">
+                </a>
+            </div>
         </div>
     </div>
 </template>
