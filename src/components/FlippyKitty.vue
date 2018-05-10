@@ -69,7 +69,7 @@ export default {
         transform: rotateY(180deg);
 
         z-index: 10;
-        background-color: black;
+        background-color: white;
     }
 
     .holographic-background {
