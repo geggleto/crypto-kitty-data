@@ -3,6 +3,13 @@
         <h1 class="title">Fancy and Exclusive CryptoKitties</h1>
         <h2 class="subtitle">Click a kitty to find them on the market</h2>
         <div class="columns is-multiline">
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/kitty/1" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1.png">
+                </a>
+            </div>
+
             <div class="column is-2">
                 <a href="https://www.cryptokitties.co/marketplace/sale?search=fancy%3Aswish" target="_blank">
                     <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/744219.png">
@@ -138,6 +145,30 @@
             <div class="column is-2">
                 <a href="https://www.cryptokitties.co/marketplace/sale?search=fancy%3ADracula" target="_blank">
                     <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/577945.png">
+                </a>
+            </div>
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/marketplace/sale?search=fancy%3A旺财汪" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1826.png">
+                </a>
+            </div>
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/kitty/230" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/230.png">
+                </a>
+            </div>
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/kitty/130" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/130.png">
+                </a>
+            </div>
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/kitty/330" target="_blank">
+                    <img class="image" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/330.png">
                 </a>
             </div>
         </div>
