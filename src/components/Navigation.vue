@@ -19,7 +19,7 @@
                 <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
                 <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
                 <router-link to="/eval" class="navbar-item" >Evaluator</router-link>
-
+                <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Product Info
