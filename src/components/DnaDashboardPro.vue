@@ -120,7 +120,7 @@
             <table class="table is-bordered is-striped is-narrow is-hoverable ">
                 <thead>
                 <tr>
-                    <th colspan="1"><a v-bind:href="getUrl()">Download CSV</a></th>
+                    <th colspan="2"><a v-bind:href="getUrl()">Download CSV</a></th>
 
                     <th colspan="4" class="cattribute-border-left" v-if="!furColumn" >Fur</th>
 
@@ -148,6 +148,7 @@
                 </tr>
                 <tr>
                     <th><a class="button is-small is-primary" v-on:click="sortIdProfile">ID</a></th>
+                    <th>Generation</th>
 
                     <th class="cattribute-border-left" v-if="!furColumn">D0</th>
                     <th class="fur" v-if="!furColumn">R1</th>
@@ -213,7 +214,7 @@
                 <tbody>
                 <tr v-for="kitty in filterKittyRow()">
                     <td><a v-bind:href="getLink(kitty.id)" target="_blank">{{ kitty.id }}</a></td>
-
+                    <td>{{ kitty.generation }}</td>
                     <td class="cattribute-border-left" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['D0']">{{ kittyDna[kitty.id]['body']['D0'] }}</td>
                     <td class="fur" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R1']">{{ kittyDna[kitty.id]['body']['R1'] }}</td>
                     <td class="fur" v-if="!furColumn && kittyDna[kitty.id] && kittyDna[kitty.id]['body']['R2']">{{ kittyDna[kitty.id]['body']['R2'] }}</td>
