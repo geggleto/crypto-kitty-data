@@ -46,6 +46,25 @@ let store = {
             this.state.kittyDna = response.data;
         });
     },
+    loadProMemberCkProfile(profile) {
+        this.state.loading = true;
+
+        axios.get('https://api.cryptokitties.co/kitties/all/'+profile)
+            .then(response => {
+                for (let i in response.data) {
+                    this.state.profileKitties.push(response.data[i]);
+                }
+
+            }).then(() => {
+                this.getKittyDna()
+                    .then(() => {this.state.loading = false; });
+            }).catch( () => {
+                this.getKittyDna()
+                    .then(() => {
+                        this.state.loading = false;
+                    });
+            });
+    },
     loadOtherCKProfile(profile, offset) {
         this.state.loading = true;
 

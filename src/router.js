@@ -9,6 +9,7 @@ import CattributePrices from './components/CattributePrices';
 import MewtationJewelSearch from './components/MewtationJewelSearch';
 import KittyPrices from './components/KittyPrices';
 import FancyPage from './components/FancyPage';
+import DnaDashboardPro from './components/DnaDashboardPro';
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,7 @@ const routes = [
     { path: '/mewtation-search', component: MewtationJewelSearch},
     { path: '/eval', component: KittyPrices},
     { path: '/fancies', component: FancyPage},
+    { path: '/dashboard-pro', component: DnaDashboardPro},
 ];
 
 const router = new VueRouter({
