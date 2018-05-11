@@ -14,12 +14,26 @@
         <div class="navbar-menu" v-bind:class="{ 'is-active' : mobile_menu }">
             <div class="navbar-start">
                 <router-link to="/" class="navbar-item">Home</router-link>
-                <router-link to="/dashboard" class="navbar-item" v-if="profile !== ''" >DNA Dashboard</router-link>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Dashboard
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <router-link to="/dashboard" class="navbar-item" v-if="profile !== ''" >DNA Dashboard < 600 kitties</router-link>
+                        <hr class="navbar-divider" />
+                        <router-link to="/dashboard-pro" class="navbar-item" v-if="profile !== ''">DNA Dashboard Pro 600+ kitties</router-link>
+                    </div>
+                </div>
+
+
                 <router-link to="/search" class="navbar-item" v-if="isAuthorized" >DNA Search</router-link>
                 <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
                 <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
                 <router-link to="/eval" class="navbar-item" >Evaluator</router-link>
                 <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
+
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Product Info
