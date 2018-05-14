@@ -302,8 +302,8 @@
         top: 0;
         left: 0px;
 
-        height: 45px;
-        width: 38px;
+        height: 38px;
+        width: 45px;
     }
 
     @-webkit-keyframes Gradient {

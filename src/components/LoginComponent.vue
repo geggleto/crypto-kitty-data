@@ -5,6 +5,15 @@
             <div class="column is-3"></div>
             <div class="column is-6">
 
+                    <div class="modal is-active" v-if="loading === true">
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                            <figure class="image is-128x128 is-centered">
+                                <img src="/assets/ether-diamond.gif" alt="">
+                            </figure>
+                        </div>
+                    </div>
+
                     <article class="message is-info">
                         <div class="message-header">
                             <p>Crypto Kitty Data Services</p>
@@ -39,14 +48,14 @@
 
 <script>
     import store from './../store';
-
     import axios from 'axios';
 
     export default {
         name: 'Login',
         data() {
             return {
-                profile : ''
+                profile : '',
+                loading : false
             }
         },
         created() {
@@ -80,17 +89,21 @@
                         store.save();
                     });
 
-                    this.loadFancies(this.profile, 0);
+                    this.loading = true;
+
+                    setTimeout(
+                        this.loadFancies(this.profile, 0),
+                        500
+                    );
                 });
             },
             loadFancies(profile, offset) {
                 if (offset === 600) {
+                    this.loading = false;
                     return;
                 } else {
                     axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address=' + profile + '&limit=20&search=type:fancy&offset=' + offset)
                         .then(response => {
-                            console.log(response.data);
-
                             for (let i in response.data.kitties) {
                                 let kitty = response.data.kitties[i];
 
@@ -99,12 +112,13 @@
                             }
 
                             if (response.data.kitties.length > 0) {
-                                setTimeout(this.loadOtherCKProfile(profile, offset + 20), 200);
+                                setTimeout(this.loadOtherCKProfile(profile, offset + 20), 100);
                             } else {
+                                this.loading = false;
                                 return;
                             }
                         }).catch(() => {
-                            //Meh
+                        this.loading = false;
                         });
                 }
             },
@@ -114,5 +128,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.modal-background {
+    background-color: white;
+}
+.is-horizontal-center {
+    justify-content: center;
+}
 </style>

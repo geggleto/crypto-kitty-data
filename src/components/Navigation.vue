@@ -27,11 +27,19 @@
                     </div>
                 </div>
 
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Tools
+                    </a>
 
-                <router-link to="/search" class="navbar-item" v-if="isAuthorized" >DNA Search</router-link>
-                <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
-                <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
-                <router-link to="/eval" class="navbar-item" >Evaluator</router-link>
+                    <div class="navbar-dropdown">
+                        <router-link to="/search" class="navbar-item" v-if="isAuthorized" >DNA Search</router-link>
+                        <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
+                        <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
+                        <router-link to="/eval" class="navbar-item" >Kitty Evaluator</router-link>
+                    </div>
+                </div>
+
                 <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
 
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -40,15 +48,17 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <router-link to="/dashboard-info" class="navbar-item">DNA Dashboard (Free)</router-link>
-                        <hr class="navbar-divider" />
-                        <router-link to="/search-info" class="navbar-item">DNA Search (Paid)</router-link>
+                        <router-link to="/search-info" class="navbar-item">DNA Recessive Search (Paid)</router-link>
                     </div>
                 </div>
 
             </div>
 
             <div class="navbar-end">
+                <div class="navbar-item" v-if="profile">
+                    0x{{ profile.substr(0,5) + "..." }}
+                </div>
+
                 <tip></tip>
             </div>
         </div>
