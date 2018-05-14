@@ -29,7 +29,9 @@ let store = {
         mysteryColumn : false,
 
         isAuthorized : false,
-        mobile_menu : false
+        mobile_menu : false,
+
+        generation: '',
 
     },
     getKittyDna() {

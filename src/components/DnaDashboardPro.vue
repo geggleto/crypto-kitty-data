@@ -5,7 +5,7 @@
                 <!-- Left side -->
                 <div class="level-left">
                     <div class="level-item">
-                        <h1 class="title">DNA Dashboard (Pro) BETA)</h1>
+                        <h1 class="title">DNA Dashboard (Pro)</h1>
                     </div>
                 </div>
             </nav>
@@ -46,14 +46,14 @@
                 </div>
             </nav>
 
-            <nav class="level">
+            <div class="columns">
                 <!-- Left side -->
-                <div class="level-left">
-                    <div class="level-item">
-                        <input class="input" type="text" placeholder="Filter" v-model="filter">
-                    </div>
+                <div class="column is-2">
+                    <input class="input" type="text" placeholder="Filter" v-model="filter">
+                    <br />
+                    <input class="input" type="text" placeholder="Generation" v-model="generation">
                 </div>
-                <div cllass="level-right">
+                <div class="column">
                     <div class="buttons level-item">
                         <a
                                 class="button"
@@ -114,7 +114,8 @@
                                 v-on:click="unknownColumn = !unknownColumn">Unknown</a>
                     </div>
                 </div>
-            </nav>
+            </div>
+
 
 
             <table class="table is-bordered is-striped is-narrow is-hoverable ">
@@ -148,7 +149,7 @@
                 </tr>
                 <tr>
                     <th><a class="button is-small is-primary" v-on:click="sortIdProfile">ID</a></th>
-                    <th>Generation</th>
+                    <th><a class="button is-small is-primary" v-on:click="sortGenProfile">Gen</a></th>
 
                     <th class="cattribute-border-left" v-if="!furColumn">D0</th>
                     <th class="fur" v-if="!furColumn">R1</th>
@@ -417,14 +418,26 @@
                 this.loadProfile();
             },
             filterKittyRow() {
-                if (this.filter === '') {
+                if (this.filter === '' && this.generation === '') {
                     return this.profileKitties;
                 } else {
-                    return this.profileKitties.filter(kitty => {
-                        let dna = this.kittyDna[kitty.id];
+                    if (this.filter !== '' && this.generation === '' ) {
+                        return this.profileKitties.filter(kitty => {
+                            let dna = this.kittyDna[kitty.id];
 
-                        return JSON.stringify(dna).indexOf(this.filter) >= 0;
-                    });
+                            return JSON.stringify(dna).indexOf(this.filter) >= 0;
+                        });
+                    } else if (this.generation !== '' && this.filter === '') {
+                        return this.profileKitties.filter(kitty => {
+                            return kitty.generation == this.generation;
+                        });
+                    } else {
+                        return this.profileKitties.filter(kitty => {
+                            let dna = this.kittyDna[kitty.id];
+
+                            return JSON.stringify(dna).indexOf(this.filter) >= 0 && kitty.generation == this.generation;
+                        })
+                    }
                 }
             },
             kaiToDec(kai) {
