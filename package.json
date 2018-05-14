@@ -16,6 +16,9 @@
     "axios": "^0.18.0",
     "bulma": "^0.6.2",
     "bulma-tooltip": "^1.0.4",
+    "eth-sig-util": "^1.4.2",
+    "ethereumjs-util": "^5.2.0",
+    "ethjs": "^0.4.0",
     "jquery": "^3.3.1",
     "jquery-autocomplete": "^1.2.8",
     "jquery-ui": "^1.12.1",
@@ -26,7 +29,7 @@
     "vue-analytics": "^5.10.4",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1",
-    "web3": "^1.0.0-beta.33"
+    "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.6",

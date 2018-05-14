@@ -40,6 +40,8 @@
 <script>
     import store from './../store';
 
+    import axios from 'axios';
+
     export default {
         name: 'Login',
         data() {
@@ -47,7 +49,7 @@
                 profile : ''
             }
         },
-        created : () => {
+        created() {
 
             store.load();
 
@@ -57,30 +59,54 @@
                 if (store.state.profile !== this.profile) {
                     store.state.profile = '';
                 }
+
             }
         },
         methods : {
-            login : () => {
-                let signer = this.profile;
+            login() {
+                let signer = web3.eth.accounts[0];
                 let original_message = "Crypto Kitty Data!";
                 let message = web3.toHex(original_message);
-                let message_hash = web3.sha3(
-                    '\u0019Ethereum Signed Message:\n' +
-                    message.length.toString() +
-                    message
-                );
 
                 web3.personal.sign(message, signer, (err, res) => {
                     if (err) {
                         console.error(err);
                     } else {
+                        this.profile = web3.eth.accounts[0];
                         store.state.profile = this.profile;
                     }
 
                     store.getAuthorizations().then(() => {
                         store.save();
                     });
+
+                    this.loadFancies(this.profile, 0);
                 });
+            },
+            loadFancies(profile, offset) {
+                if (offset === 600) {
+                    return;
+                } else {
+                    axios.get('https://api.cryptokitties.co/kitties?owner_wallet_address=' + profile + '&limit=20&search=type:fancy&offset=' + offset)
+                        .then(response => {
+                            console.log(response.data);
+
+                            for (let i in response.data.kitties) {
+                                let kitty = response.data.kitties[i];
+
+                                let type = kitty.fancy_type;
+                                store.state.fancies[type] = true;
+                            }
+
+                            if (response.data.kitties.length > 0) {
+                                setTimeout(this.loadOtherCKProfile(profile, offset + 20), 200);
+                            } else {
+                                return;
+                            }
+                        }).catch(() => {
+                            //Meh
+                        });
+                }
             },
         }
     }

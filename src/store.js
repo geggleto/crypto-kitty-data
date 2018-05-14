@@ -32,7 +32,7 @@ let store = {
         mobile_menu : false,
 
         generation: '',
-
+        fancies : {},
     },
     getKittyDna() {
         return axios.post('https://dna.cryptokittydata.info/fetch/dna',
