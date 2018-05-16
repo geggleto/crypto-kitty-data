@@ -21,7 +21,7 @@
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Aknightkitty" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Aknightkitty" target="_blank">
                     <flippy-kitty   src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/104.png"></flippy-kitty>
                 </a>
             </div>
@@ -51,7 +51,7 @@
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Abugcat" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Abugcat" target="_blank">
                     <flippy-kitty  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/103.png"></flippy-kitty>
                 </a>
             </div>
@@ -60,135 +60,143 @@
 
         <h1 class="title">Crypto Kitty Fancy Cats</h1>
         <div class="columns is-multiline">
+
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Aswish" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Adocpurr" target="_blank">
+                    <flippy-kitty type="docpurr"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/752603.png"></flippy-kitty>
+                </a>
+            </div>
+
+
+            <div class="column is-2">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Aswish" target="_blank">
                     <flippy-kitty type="Swish"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/744219.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Aflutterbee" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Aflutterbee" target="_blank">
                     <flippy-kitty type="FlutterBee" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/719874.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Avernon" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Avernon" target="_blank">
                     <flippy-kitty type="Vernon"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/696398.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Aberry" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Aberry" target="_blank">
                     <flippy-kitty type="Berry" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/627082.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3A汪星爷" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3A汪星爷" target="_blank">
                     <flippy-kitty  type="汪星爷" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/586194.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3A咚咚锵" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3A咚咚锵" target="_blank">
                     <flippy-kitty type="咚咚锵" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/596826.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Apussforprogress" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Apussforprogress" target="_blank">
                     <flippy-kitty type="PussForProgress"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/617794.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3A红包喵" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3A红包喵" target="_blank">
                     <flippy-kitty type="红包喵" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/623578.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Atabby" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Atabby" target="_blank">
                     <flippy-kitty type="Tabby"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/572197.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AYuriCatsuki" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AYuriCatsuki" target="_blank">
                     <flippy-kitty type="YuriCatsuki" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/551150.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AMisterPurrfect" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AMisterPurrfect" target="_blank">
                     <flippy-kitty type="MisterPurrfect"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/554051.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3Aearnie" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3Aearnie" target="_blank">
                     <flippy-kitty  type="Earnie" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/556220.png"></flippy-kitty>
                 </a>
             </div>
 
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AMomo-chan" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AMomo-chan" target="_blank">
                     <flippy-kitty type="Momo-chan" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/574582.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3ANegato" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3ANegato" target="_blank">
                     <flippy-kitty type="Negato"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/558202.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AStitches" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AStitches" target="_blank">
                     <flippy-kitty type="Stitches"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/562940.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3APhuZiqaat" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3APhuZiqaat" target="_blank">
                     <flippy-kitty type="PhuZiqaat" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/572389.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3ASantaClaws" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3ASantaClaws" target="_blank">
                     <flippy-kitty type="SantaClaws"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/549629.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AMistletoe" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AMistletoe" target="_blank">
                     <flippy-kitty type="Mistletoe"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/553850.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3AShipCat" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3AShipCat" target="_blank">
                     <flippy-kitty type="ShipCat"  src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/567966.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3ADuCat" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3ADuCat" target="_blank">
                     <flippy-kitty  type="DuCat" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/657713.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3ADracula" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3ADracula" target="_blank">
                     <flippy-kitty type="Dracula" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/577945.png"></flippy-kitty>
                 </a>
             </div>
 
             <div class="column is-2">
-                <a href="https://www.cryptokitties.co/marketplace?search=fancy%3A旺财汪" target="_blank">
+                <a href="https://www.cryptokitties.co/marketplace?include=sale,sire,other&search=fancy%3A旺财汪" target="_blank">
                     <flippy-kitty  type="旺财汪" src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/1826.png" ></flippy-kitty>
                 </a>
             </div>
