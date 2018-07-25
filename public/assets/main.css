@@ -6588,10 +6588,9 @@ label.panel-block {
   .tooltip.is-tooltip-left:focus::before, .tooltip.is-tooltip-left:hover::before, .tooltip.is-tooltip-left.is-tooltip-active::before {
     transform: translate(-0.5rem, 50%); }
   .tooltip.is-tooltip-multiline::before {
-    min-width: 24rem;
     text-overflow: clip;
     white-space: normal;
-    word-break: break-word; }
+    word-break: keep-all; }
   .tooltip.is-tooltip-white:not(.is-loading)::after {
     border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent; }
   .tooltip.is-tooltip-white.is-tooltip-right:not(.is-loading)::after {

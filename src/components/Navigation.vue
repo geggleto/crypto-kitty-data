@@ -55,11 +55,9 @@
             </div>
 
             <div class="navbar-end">
-                <div class="navbar-item" v-if="profile">
-                    0x{{ profile.substr(0,5) + "..." }}
+                <div class="navbar-item">
+                    Tips: 0xCECDDbE88359f6EcEBE90b42643B002543F27fE9
                 </div>
-
-                <tip></tip>
             </div>
         </div>
     </nav>
