@@ -37,6 +37,7 @@
                         <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
                         <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
                         <router-link to="/eval" class="navbar-item" >Kitty Evaluator</router-link>
+                        <router-link to="/kitty" class="navbar-item" >Gene Reader</router-link>
                     </div>
                 </div>
 

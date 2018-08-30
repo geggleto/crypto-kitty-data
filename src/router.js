@@ -11,6 +11,7 @@ import KittyPrices from './components/KittyPrices';
 import FancyPage from './components/FancyPage';
 import DnaDashboardPro from './components/DnaDashboardPro';
 import ThankYou from './components/ThankYou';
+import KittyRead from './components/KittyRead';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,8 @@ const routes = [
     { path: '/fancies', component: FancyPage},
     { path: '/dashboard-pro', component: DnaDashboardPro},
     { path: '/thank-you', component: ThankYou},
+    { path: '/kitty', component: KittyRead },
+    { path: '/kitty/:kittyId', component: KittyRead }
 ];
 
 const router = new VueRouter({
