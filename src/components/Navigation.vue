@@ -38,10 +38,12 @@
                         <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
                         <router-link to="/eval" class="navbar-item" >Kitty Evaluator</router-link>
                         <router-link to="/kitty" class="navbar-item" >Gene Reader</router-link>
+                        <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
+                        <router-link to="/health" class="navbar-item" >CK API Health</router-link>
                     </div>
                 </div>
 
-                <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
+
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
