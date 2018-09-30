@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "npm run css-watch | vue-cli-service serve --open",
-    "build": "npm run css-build && vue-cli-service build",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "css-deploy": "npm run css-build",
     "css-build": "node-sass resources/main.scss public/assets/main.css",
@@ -22,6 +22,7 @@
     "node-sass": "^4.5.3",
     "postcss-cli": "^4.1.1",
     "qs": "^6.5.1",
+    "sass-loader": "^7.1.0",
     "vue": "^2.5.13",
     "vue-analytics": "^5.10.4",
     "vue-head": "^2.0.12",

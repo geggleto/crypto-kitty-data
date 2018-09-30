@@ -12,7 +12,8 @@ import FancyPage from './components/FancyPage';
 import DnaDashboardPro from './components/DnaDashboardPro';
 import ThankYou from './components/ThankYou';
 import KittyRead from './components/KittyRead';
-import ApiHealth from './components/ApiHealth'
+import ApiHealth from './components/ApiHealth';
+import BreedChecker from './components/BreedChecker';
 
 Vue.use(VueRouter);
 
@@ -31,7 +32,8 @@ const routes = [
     { path: '/thank-you', component: ThankYou},
     { path: '/kitty', component: KittyRead },
     { path: '/kitty/:kittyId', component: KittyRead },
-  { path: '/health', component: ApiHealth}
+  { path: '/health', component: ApiHealth},
+  { path: '/breed-tool', component: BreedChecker}
 ];
 
 const router = new VueRouter({
