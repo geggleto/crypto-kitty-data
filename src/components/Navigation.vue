@@ -46,15 +46,15 @@
 
 
 
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        Product Info
-                    </a>
+                <!--<div class="navbar-item has-dropdown is-hoverable">-->
+                    <!--<a class="navbar-link">-->
+                        <!--Product Info-->
+                    <!--</a>-->
 
-                    <div class="navbar-dropdown">
-                        <router-link to="/search-info" class="navbar-item">DNA Recessive Search (Paid)</router-link>
-                    </div>
-                </div>
+                    <!--<div class="navbar-dropdown">-->
+                        <!--<router-link to="/search-info" class="navbar-item">DNA Recessive Search (Paid)</router-link>-->
+                    <!--</div>-->
+                <!--</div>-->
 
             </div>
 

@@ -114,13 +114,15 @@ let store = {
     },
     getAuthorizations()
     {
-        return axios.post('https://dna.cryptokittydata.info/authorizations', {
-            profile : this.state.profile.toUpperCase()
-        }).then(response => {
-            this.state.isAuthorized = response.data.isAuthorized
-        }).catch((err) => {
-            //should do something here
-        })
+        this.state.isAuthorized = true;
+
+        // return axios.post('https://dna.cryptokittydata.info/authorizations', {
+        //     profile : this.state.profile.toUpperCase()
+        // }).then(response => {
+        //     this.state.isAuthorized = response.data.isAuthorized
+        // }).catch((err) => {
+        //     //should do something here
+        // })
     }
 };
 
