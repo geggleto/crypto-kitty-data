@@ -33,14 +33,14 @@
                     </a>
 
                     <div class="navbar-dropdown">
-                        <router-link to="/search" class="navbar-item" v-if="isAuthorized" >DNA Search</router-link>
+                        <router-link to="/search" class="navbar-item">DNA Search</router-link>
                         <router-link to="/attributes" class="navbar-item" >Cattribute Prices</router-link>
                         <router-link to="/mewtation-search" class="navbar-item" >Mewtation Search</router-link>
                         <router-link to="/eval" class="navbar-item" >Kitty Evaluator</router-link>
                         <router-link to="/kitty" class="navbar-item" >Gene Reader</router-link>
                         <router-link to="/fancies" class="navbar-item" >Fancy List</router-link>
                         <router-link to="/health" class="navbar-item" >CK API Health</router-link>
-                        <router-link to="/breed-tool" class="navbar-item" v-if="isAuthorized" >Breed Tool</router-link>
+                        <router-link to="/breed-tool" class="navbar-item" >Breed Tool</router-link>
                     </div>
                 </div>
 
